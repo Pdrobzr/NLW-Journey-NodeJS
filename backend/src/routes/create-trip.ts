@@ -1,16 +1,11 @@
 import type { FastifyInstance } from "fastify";
 import { ZodTypeProvider } from "fastify-type-provider-zod";
-import dayjs from "dayjs";
 import { z } from 'zod';
 import { prisma } from "../lib/prisma";
 import { getMailClient } from "../lib/mail";
-import localizedFormat from 'dayjs/plugin/localizedFormat'
-import 'dayjs/locale/pt-br';
+import { dayjs } from '../lib/dayjs';
 import nodemailer from 'nodemailer';
 import * as dotenv from 'dotenv';
-
-dayjs.locale('pt-br');
-dayjs.extend(localizedFormat);
 
 dotenv.config();
 
